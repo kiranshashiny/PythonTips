@@ -1,5 +1,7 @@
 # PythonTips
 
+##### Pretty Print
+
 		import json
 		
 		# Pretty Print
@@ -9,8 +11,9 @@
 		    "4": 5,
 		    "6": 7
 		}
+
+#####  Adding data to a payload object.
 		
-		## Adding new 'key-value' to datastructure
 		
 		data = {}
 		data['shashi'] = 'kiran'
