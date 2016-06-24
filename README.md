@@ -24,3 +24,5 @@
 		
 		### Pretty Print of the same data above.
 		print json.dumps ( json_data, sort_keys=True, indent=4, separators=(',', ': '))
+
+![alt tag](https://cloud.githubusercontent.com/assets/14288989/16335968/6ba6fb62-3a27-11e6-80b0-d7998a2ecd7a.png)
