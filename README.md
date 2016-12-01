@@ -70,13 +70,15 @@
 ![alt tag](https://cloud.githubusercontent.com/assets/14288989/16335968/6ba6fb62-3a27-11e6-80b0-d7998a2ecd7a.png)
 
 
-##### Visual Recognition API
+### Visual Recognition API
 
-
-
+Code:
 
         with open(join(dirname(__file__), 'indianprez.jpg'), 'rb') as image_file:
             print(json.dumps(visual_recognition.detect_faces(images_file=image_file), indent=2))
+
+
+Output typically is :
 
 
 		{
@@ -108,7 +110,8 @@
 		}
 
 
-Code:
+Code to parse this type of output:
+
 	import json
 	from pprint import pprint
 	
@@ -130,7 +133,7 @@ Code:
 	print data['images'][0]['faces'][0]['face_location']['width']
 
 
-Output:
+Output of Python :
 
 		name of the image 
 		indianprez.jpg
