@@ -70,16 +70,34 @@
 ![alt tag](https://cloud.githubusercontent.com/assets/14288989/16335968/6ba6fb62-3a27-11e6-80b0-d7998a2ecd7a.png)
 
 
-### Visual Recognition API
+### Visual Recognition API ( detect faces and classify )
 
-Code:
+
+####To take photos from IP Cam:
+
+Start the App on the SmartPhone
+
+On the laptop run this command:
+
+        curl http://192.168.1.2:8080/photo.jpg >photo.jpg
+          % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                         Dload  Upload   Total   Spent    Left  Speed
+        100  298k    0  298k    0     0   196k      0 --:--:--  0:00:01 --:--:--  196k
+
+
+
+Code to detect faces: ( This does not detect images- like a car, Use classify() )
 
         with open(join(dirname(__file__), 'indianprez.jpg'), 'rb') as image_file:
             print(json.dumps(visual_recognition.detect_faces(images_file=image_file), indent=2))
 
+Code to detect images : like an car.jpg 
 
-Output typically is :
+    with open(join(dirname(__file__), 'photo.jpg'), 'rb') as image_file:
+        print(json.dumps(visual_recognition.classify(images_file=image_file), indent=2))
 
+
+Output typically for detect_faces :
 
 		{
 		  "images": [
