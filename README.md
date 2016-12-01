@@ -68,3 +68,79 @@
 		print json.dumps ( json_data, sort_keys=True, indent=4, separators=(',', ': '))
 
 ![alt tag](https://cloud.githubusercontent.com/assets/14288989/16335968/6ba6fb62-3a27-11e6-80b0-d7998a2ecd7a.png)
+
+
+##### Visual Recognition API
+
+
+
+
+        with open(join(dirname(__file__), 'indianprez.jpg'), 'rb') as image_file:
+            print(json.dumps(visual_recognition.detect_faces(images_file=image_file), indent=2))
+
+
+		{
+		  "images": [
+		    {
+		      "image": "indianprez.jpg", 
+		      "faces": [
+		        {
+		          "gender": {
+		            "gender": "MALE", 
+		            "score": 0.817574
+		          }, 
+		          "age": {
+		            "max": 44, 
+		            "score": 0.384491, 
+		            "min": 35
+		          }, 
+		          "face_location": {
+		            "width": 216, 
+		            "top": 160, 
+		            "left": 144, 
+		            "height": 242
+		          }
+		        }
+		      ]
+		    }
+		  ], 
+		  "images_processed": 1
+		}
+
+
+Code:
+	import json
+	from pprint import pprint
+	
+	with open('data.json') as data_file:    
+	    data = json.load(data_file)
+	
+	pprint(data)
+	
+	print "name of the image "
+	print data['images'][0]['image']
+	
+	print "printing faces"
+	print data['images'][0]['faces']
+	
+	print "printing face_location"
+	print data['images'][0]['faces'][0]['face_location']
+	
+	print "print face_location width"
+	print data['images'][0]['faces'][0]['face_location']['width']
+
+
+Output:
+
+		name of the image 
+		indianprez.jpg
+
+		printing faces
+		[{u'gender': {u'gender': u'MALE', u'score': 0.817574}, u'age': {u'max': 44, u'score': 0.384491, u'min': 35}, u'face_location': {u'width': 216, u'top': 160, u'height': 242, u'left': 144}}]
+
+		printing face_location
+		{u'width': 216, u'top': 160, u'height': 242, u'left': 144}
+
+		print face_location width
+		216
+		
